@@ -3,7 +3,9 @@ import Link from 'next/link'
 import {API} from 'aws-amplify'
 import {listPosts} from '../graphql/queries'
 
-
+/**
+ * Displays posts
+ */
 export default function Home(){
   const [posts, setPosts] = useState([])
 
@@ -11,6 +13,7 @@ export default function Home(){
     fetchPosts()
   },[])
 
+  // fetches post from amplify using graphql
   const fetchPosts = async () => {
     const postData = await API.graphql({
       query: listPosts
