@@ -8,3 +8,4 @@
 ## Getting started
 1. Fork this repo
 2. run `npm install`
+3. run `npm run dev` to start dev server
