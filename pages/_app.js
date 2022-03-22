@@ -1,7 +1,6 @@
 import '../styles/globals.css'
 import '../configureAmplify'
 import Link from 'next/link'
-import '@aws-amplify/ui-react'
 
 function MyApp({ Component, pageProps }) {
   return(
