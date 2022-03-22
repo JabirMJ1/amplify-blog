@@ -7,6 +7,7 @@ export const getPost = /* GraphQL */ `
       id
       title
       content
+      username
       createdAt
       updatedAt
     }
@@ -14,15 +15,53 @@ export const getPost = /* GraphQL */ `
 `;
 export const listPosts = /* GraphQL */ `
   query ListPosts(
+    $id: ID
     $filter: ModelPostFilterInput
     $limit: Int
     $nextToken: String
+    $sortDirection: ModelSortDirection
   ) {
-    listPosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listPosts(
+      id: $id
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      sortDirection: $sortDirection
+    ) {
       items {
         id
         title
         content
+        username
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const postsByUsername = /* GraphQL */ `
+  query PostsByUsername(
+    $username: String!
+    $id: ModelIDKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelPostFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    postsByUsername(
+      username: $username
+      id: $id
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        title
+        content
+        username
         createdAt
         updatedAt
       }

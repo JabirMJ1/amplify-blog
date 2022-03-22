@@ -6,7 +6,16 @@
     "gqlSchemaPath": "D:\\Folders\\Work\\Portfolio\\amplify-blog\\amplify\\backend\\api\\amplifyblog\\schema.graphql",
     "defaultAuthType": {
       "mode": "API_KEY",
-      "expirationTime": 7
-    }
+      "expirationTime": 365,
+      "apiKeyExpirationDate": "2023-03-22T13:58:46.271Z",
+      "keyDescription": "public"
+    },
+    "conflictResolution": {},
+    "additionalAuthTypes": [
+      {
+        "mode": "AMAZON_COGNITO_USER_POOLS",
+        "cognitoUserPoolId": "authamplifyblogfb670841"
+      }
+    ]
   }
 }
