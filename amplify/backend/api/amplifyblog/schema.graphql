@@ -8,10 +8,11 @@ type Post @model
 # Authentication types
 @auth(rules:[
   {allow: owner, ownerField: "username"},
-  {allow: private, operations: [read]}
+  {allow: public, operations: [read]}
 ])  {
   id: ID! @primaryKey
   title: String!
   content: String!
   username: String @index(name: "postsByUsername", sortKeyFields: ["id"], queryField:"postsByUsername")
+  coverImage: String
 }

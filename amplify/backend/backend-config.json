@@ -50,5 +50,19 @@
         ]
       }
     }
+  },
+  "function": {
+    "S3Trigger1e3e8aa8": {
+      "service": "Lambda",
+      "providerPlugin": "awscloudformation",
+      "build": true
+    }
+  },
+  "storage": {
+    "blogimages": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
+    }
   }
 }

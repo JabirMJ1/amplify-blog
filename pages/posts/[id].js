@@ -5,17 +5,17 @@ import ReactMarkdown from 'react-markdown'
 import { listPosts, getPost } from '../../graphql/queries'
 
 export default function Post({ post }) {
-//   const [coverImage, setCoverImage] = useState(null)
-//   useEffect(() => {
-//     updateCoverImage()
-//   }, [])
-//   async function updateCoverImage() {
-//     if (post.coverImage) {
-//       const imageKey = await Storage.get(post.coverImage)
-//       setCoverImage(imageKey)
-//     }
-//   }
-//   console.log('post: ', post)
+  const [coverImage, setCoverImage] = useState(null)
+  useEffect(() => {
+    updateCoverImage()
+  }, [])
+  async function updateCoverImage() {
+    if (post.coverImage) {
+      const imageKey = await Storage.get(post.coverImage)
+      setCoverImage(imageKey)
+    }
+  }
+  console.log('post: ', post)
   const router = useRouter()
   if (router.isFallback) {
     return <div>Loading...</div>
@@ -52,7 +52,8 @@ export async function getStaticProps ({ params }) {
   })
   return {
     props: {
-      post: postData.data.getPost
-    }
+      post: postData.data.getPost,
+    },
+    revalidate: 100
   }
 }

@@ -1,0 +1,15 @@
+{
+  "resourceName": "blogimages",
+  "policyUUID": "189f54ca",
+  "bucketName": "amplifyblogfe0f07a6bdd4475081a7165d931b0cac",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "groupAccess": {}
+}
