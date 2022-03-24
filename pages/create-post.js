@@ -8,6 +8,7 @@ import dynamic from 'next/dynamic'
 const SimpleMDE = dynamic(() => import('react-simplemde-editor'), { ssr: false })
 import "easymde/dist/easymde.min.css"
 import { createPost } from '../graphql/mutations'
+import '@aws-amplify/ui-react/styles.css'
 
 const initialState = { title: '', content: '' }
 

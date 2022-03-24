@@ -9,6 +9,7 @@ const SimpleMDE = dynamic(() => import('react-simplemde-editor'), { ssr: false }
 import "easymde/dist/easymde.min.css"
 import { getPost } from '../../graphql/queries'
 import { updatePost } from '../../graphql/mutations'
+import '@aws-amplify/ui-react/styles.css'
 
 const initialState = { title: '', content: '' }
 
