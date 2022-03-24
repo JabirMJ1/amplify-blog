@@ -24,7 +24,7 @@ export default function Post({ post }) {
     <div>
       <h1 className="text-5xl mt-4 font-semibold tracking-wide">{post.title}</h1>
       {
-        coverImage && <img src={coverImage} className="mt-4" />
+        coverImage && <img src={coverImage} className="mt-4" alt={`Cover Image - ${post.title}`}/>
       }
       <p className="text-sm font-light my-4">by {post.username}</p>
       <div className="mt-8">

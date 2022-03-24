@@ -67,7 +67,7 @@ function CreatePost() {
                         /> 
                         {
                              image && (
-                               <img src={URL.createObjectURL(image)} className="my-4" />
+                               <img src={URL.createObjectURL(image)} className="my-4" alt={`Cover Image`}/>
                              )
                         }
                         <SimpleMDE value={post.content} onChange={value => setPost({ ...post, content: value })} />
